@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI DUBBER WEB PRO</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header><div class="brand">🎙️ AI DUBBER <span>WEB PRO</span></div><p>Translate subtitles with Gemini AI</p></header>
+<main>
+  <section class="panel">
+    <h1>Subtitle Translator</h1>
+    <label>Video preview (optional)</label><input id="videoFile" type="file" accept="video/*">
+    <video id="videoPreview" controls hidden></video>
+    <label>Import subtitle (.srt / .vtt)</label><input id="subtitleFile" type="file" accept=".srt,.vtt,text/plain">
+    <div class="grid">
+      <div><label>Translate from</label><select id="sourceLang"><option value="auto">Auto detect</option><option value="English">English</option><option value="Chinese">Chinese</option><option value="Thai">Thai</option><option value="Khmer">Khmer</option><option value="Japanese">Japanese</option><option value="Korean">Korean</option></select></div>
+      <div><label>Translate to</label><select id="targetLang"><option>Khmer</option><option>English</option><option>Thai</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Japanese</option><option>French</option></select></div>
+    </div>
+    <label>Gemini model</label><select id="modelSelect"><option value="gemini-3.7-flash">Gemini 3.7 Flash (if available for your API key)</option><option value="gemini-2.5-flash">Gemini 2.5 Flash</option></select>
+    <div class="actions"><button id="translateBtn">Translate subtitles</button><button id="exportBtn" class="secondary">Export SRT</button></div>
+    <p id="status" role="status">Import an SRT or VTT file to begin.</p>
+  </section>
+  <section class="panel">
+    <h2>Subtitle editor</h2>
+    <div id="subtitleList" class="subtitle-list"><p class="muted">No subtitles loaded yet.</p></div>
+  </section>
+</main>
+<footer>AI DUBBER WEB PRO · Cloudflare Pages</footer>
+<script src="/app.js"></script>
+</body></html>
